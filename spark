@@ -1,0 +1,11 @@
+1、Spark中的Driver即运行Application的Main()函数并且创建SparkContext，其中创建SparkContext的目的是为了准备Spark应用程序的运行环境。在Spark中由SparkContext负责和
+ClusterManager通信，进行资源的申请、任务的分配和监控等；当Executor部分运行完毕后，Driver负责将SparkContext关闭。通常SparkContext代表Driver
+
+原文链接：https://blog.csdn.net/qq_41946557/article/details/103377494
+
+2、Executor是spark任务（task）的执行单元，运行在worker上，但是不等同于worker，实际上它是一组计算资源(cpu核心、memory)的集合。一个worker上的memory、cpu由多个executor共同分摊
+  Executor是Spark程序中的一个JVM进程，负责执行Spark作业的具体任务（task），每个任务之间彼此相互独立。Spark应用启动时，Executor同时被启动，并且伴随着Spark程序的生命周期而存在。
+  如果有Executor节点发生了故障，程序也不会停止运行，而是将出错的Executor节点上的任务调度到其他Executor节点运行。
+spark.executor.cores：顾名思义这个参数是用来指定executor的cpu内核个数，分配更多的内核意味着executor并发能力越强，能够同时执行更多的task
+spark.cores.max ：为一个application分配的最大cpu核心数，如果没有设置这个值默认为spark.deploy.defaultCores
+spark.executor.memory：配置executor内存大小
