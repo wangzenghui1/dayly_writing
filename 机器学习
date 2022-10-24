@@ -7,3 +7,15 @@ xgb 两个接口：
 python 查看库版本号：
   pandas._version_、 pandas.show_versions() 、 pip list
  
+模型加载方式：
+  clf.save_model('xgbtest.model') 
+  clf_load=xgboost.Booster()# 但是这种方式加载之后只能进行预测，不能显示之前模型的属性，如特征重要度等
+  clf_load=clf_load.load_model('xgbtestmodel')
+  import pickle  # 这种方式加载之后和原来模型完全一样
+  with open('clf.pickle','wb') as f:
+    pickle.dump(clf,f)
+  with open('clf.pickle','rb') as f:
+    clf_load=pickle.load(f) 
+  import joblib  # 这种方式加载之后和原来模型完全一样
+  joblib.dump(clf,'clf.pkl',compress=3)
+  clf_load=joblib.load('clf.pkl')
