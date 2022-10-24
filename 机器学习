@@ -4,4 +4,6 @@ xgb 两个接口：
   import xgboost as xgb 模型训练使用 params={} model=xgb.train(params=params,dtrain=x_train)
   sklearn接口：预测label和概率均可
   from xgboost.sklearn import XGBClassifier 模型训练使用model=XGBClassifier( learning_rate = 0.3, max_depth= 3,num_boost_round=50)  model.fit(x_train,y_train)
-  
+python 查看库版本号：
+  pandas._version_、 pandas.show_versions() 、 pip list
+ 
