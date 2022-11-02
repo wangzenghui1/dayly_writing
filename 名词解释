@@ -3,3 +3,4 @@
   任务管理等模块，易于集成的开发平台.让我们的开发人员不再为琐碎的权限菜单、日志、异常、事务、任务而“费劲“，只需关注业务的实现
 3、Shell和Bash：shell是运行在终端中的文本互动程序，是文本解释器程序的统称，可以写一个脚本，然后run；bash（GNU Bourne-Again Shell）是最常用的一种shell，是当前大多数Linux发行版的默认Shell。即：shell是总称，
   bash是shell的一个版本。常见的Shell有sh、bash、ksh、rsh、csh等。
+4、SDK：softwaredevelopmentkit，中文意思是软件开发工具包
